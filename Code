@@ -1,0 +1,36 @@
+def count_calls():
+    global calls
+    calls = int(calls) + 1
+    return calls
+
+
+def string_info(string):
+    string = [len(string), string.upper(), string.lower()]
+    count_calls()
+    return string
+
+
+def is_contains(string, list_to_search):
+    string = str(string.lower())
+    list_to_search = list(list_to_search)
+    count_calls()
+    for i in range(len(list_to_search)):
+        if string == str(list_to_search[i]).lower():
+            is_cont = True
+            break
+        else:
+            is_cont = False
+    return (is_cont)
+
+
+calls = int(0)
+print(string_info('Moscow'))
+print(string_info('Lissabon'))
+print(string_info('MADRID'))
+print(string_info('Paris'))
+print(string_info('VashigTON'))
+print(string_info('Saint Petersburg'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))
+print(is_contains('cycle', ['recycling', 'cyclic']))
+print(int(calls))
+
